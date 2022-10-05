@@ -1,4 +1,4 @@
-#MERN Stack
+# MERN Stack
 
 MongoDB — document database
 Express(.js) — Node.js web framework
