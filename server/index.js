@@ -14,7 +14,7 @@ app.use('/posts', postRoutes);
 
 //connect database to application - mongodb.com
 const CONNECTION_URL = 'mongodb+srv://admin:admin@cluster0.dudg3sn.mongodb.net/?retryWrites=true&w=majority' //not secure right now
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL) // {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
