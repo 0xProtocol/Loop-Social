@@ -7,14 +7,14 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts', postRoutes);
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
+app.use('/posts', postRoutes);
 
 //connect database to application - mongodb.com
 const CONNECTION_URL = 'mongodb+srv://admin:admin@cluster0.dudg3sn.mongodb.net/?retryWrites=true&w=majority' //not secure right now
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 mongoose.connect(CONNECTION_URL) // {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
